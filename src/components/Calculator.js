@@ -8,7 +8,6 @@ export default function Calculator() {
   let mathfromString = require("math-from-string");
 
   const [display, setDisplay] = useState("");
-  const [total, setTotal] = useState(0);
   const [calculation, setCalculation] = useState("");
 
   const addToDisplay = (input) => {
@@ -18,7 +17,6 @@ export default function Calculator() {
 
   const calculate = () => {
     try {
-      setTotal(mathfromString(calculation));
       setDisplay(mathfromString(calculation));
     } catch (err) {
       setDisplay("SYNTAX ERROR");
@@ -26,7 +24,6 @@ export default function Calculator() {
   };
 
   const resetDisplay = () => {
-    setTotal(0);
     setDisplay("");
     setCalculation("");
   };
