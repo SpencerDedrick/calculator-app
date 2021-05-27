@@ -33,62 +33,117 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://calculator-app-sd.netlify.app/)
 
 ## My process
 
+This is my first time attempting a Front End Mentor challenge. I opted for the intermediate difficulty calculator app as I have made a calculator app before but not in react, or in with the ability to change themes.
+
+First I prototyped the design in figma to get approximate CSS values. Then I began creating the various components such as the screen, the keypad, and the keys. I think this keypad is one of my first uses of CSS grid in an actual project. I'm excited to continue using it and learn more about it going forward.
+
+After the components were styled I then began to work on the theme changing functionality. When it came to the themes first I needed to create a switch that would the user to toggle between three different themes. At first I wanted to try to use an npm package to handle the switch, but I didn't find one that allowed three different states. I ended up coding a simple switch using CSS transitions for the animations. Overall, I'm pretty happy with the "brute-force" solution I came up with. It was quite tedious to code and I wouldn't want to do add a fourth theme or change the colors on a theme without optimizing or even finding a node package to handle the this process.
+
+Next I began to add the logic to the calculator. Instead of trying to create something to parse the inputs from the user I decided to use a node package that converted strings into math calculations. This solution seems to work fairly well. However, I have the feelling that this could cause issues in the future.
+
+Overall, I'm pretty satisfied with my submission and had a lot of fun coding this app. It was definately a nice refresher on handling state, and passing functions as props as well as passing data from one component to another.
+
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
+- [Front End Mentor](https://www.frontendmentor.io/solutions)
 - CSS Grid
 - [React](https://reactjs.org/) - JS library
 
 ### What I learned
 
-First time using css grid in a project.
+This is one of my first times using CSS grid in a project. I can see why it is so popular!
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+Using CSS variables to handle the theme switching was kind of fun, ableit repetative. I've never created something with a theme change functionality and haven't really used JS to manipulate CSS values like this before.
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+:root {
+  --main-bg: #3b4664;
+  --keypad-bg: #252d44;
+  --screen-bg: #181f32;
+  --key-bg-1: #637097;
+  --key-shadow-1: #404e72;
+  --key-bg-2: #d03f2f;
+  --key-shadow-2: #93261a;
+  --key-bg-3: #eae3dc;
+  --key-shadow-3: #b4a597;
+  --text-1: white;
+  --text-2: #44474f;
+  --text-3: white;
+  --text-4: white;
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
+Ever since learning how to use map to create multiple components I try to use it as much as possible. I know this isn't perfect, but I'm glad I was able to put this in to practice to create all of those buttons!
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+```js
+<div class="keypad">
+  {VALUES.map((value) => {
+    if (value === "DEL") {
+      return (
+        <Key
+          value={value}
+          keyColor="key--blue"
+          keySize="key--small"
+          keyText="key--text__small"
+          handleClick={() => {
+            props.deleteFromDisplay();
+          }}
+        ></Key>
+      );
+    } else if (value === "RESET") {
+      return (
+        <Key
+          value={value}
+          keyColor="key--blue"
+          keySize="key--large"
+          keyText="key--text__small"
+          handleClick={() => {
+            props.resetDisplay();
+          }}
+        ></Key>
+      );
+    } else if (value === "=") {
+      return (
+        <Key
+          value={value}
+          keyColor="key--red"
+          keySize="key--large"
+          handleClick={() => {
+            props.calculate();
+          }}
+        ></Key>
+      );
+    } else {
+      return (
+        <Key
+          value={value}
+          keyColor="key--white"
+          handleClick={() => {
+            props.addToDisplay(value);
+          }}
+        ></Key>
+      );
+    }
+  })}
+</div>
+```
 
 ### Continued development
 
-I would eventually like to integrate the functionality of my dice calculator to this app.
+Eventaully I'd like to add my "dice-calculator" functionality to this as a sort of easter egg. I would also like to eventually revisit this project and optimize the theme changing, implement SASS/SCSS, and optimize the logic behind the calculations to make it more bulletproof.
 
 ### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
 - Website - [Spencer Dedrick](https://spencerdedrick.netlify.app/)
-- Frontend Mentor - [@SpencerDeidrkc](https://www.frontendmentor.io/profile/SpencerDedrick)
+- Frontend Mentor - [@SpencerDedrick](https://www.frontendmentor.io/profile/SpencerDedrick)
 - LinkedIn - [Spencer Dedrick](https://www.linkedin.com/in/spencer-dedrick/)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+This was developed as a solution to a Front End Mentor challenge. I learned about Front End Mentor from Kevin Powell's youtube channel. I highly recommend this channel to anyone looking to develop their front end skills!
