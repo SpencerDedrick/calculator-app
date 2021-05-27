@@ -27,13 +27,9 @@ Users should be able to:
 - Adjust the color theme based on their preference
 - **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
-### Screenshot
-
-![](./design/Calculator-Desktop.png)
-
 ### Links
 
-- Live Site URL: [Add live site URL here](https://calculator-app-sd.netlify.app/)
+- Live Site URL: [calculator-app](https://calculator-app-sd.netlify.app/)
 
 ## My process
 
