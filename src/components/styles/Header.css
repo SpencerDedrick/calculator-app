@@ -1,0 +1,27 @@
+.header {
+  color: var(--text-1);
+  display: flex;
+  max-height: 85px;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 32px;
+}
+
+.header-text {
+  font-size: 32px;
+}
+
+.flex {
+  display: flex;
+}
+
+.test {
+  display: flex;
+  align-items: center;
+}
+
+#theme {
+  margin: 5px;
+}

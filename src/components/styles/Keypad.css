@@ -1,0 +1,11 @@
+.keypad {
+  width: 540px;
+  height: 480px;
+  background-color: var(--keypad-bg);
+  border-radius: 10px;
+  margin-top: 25px;
+  display: grid;
+  grid-template-rows: repeat(5, 20%);
+  grid-template-columns: repeat(4, 25%);
+  place-items: center;
+}

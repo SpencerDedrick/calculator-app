@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+:root {
+  --main-bg: #3b4664;
+  --keypad-bg: #252d44;
+  --screen-bg: #181f32;
+  --key-bg-1: #637097;
+  --key-shadow-1: #404e72;
+  --key-bg-2: #d03f2f;
+  --key-shadow-2: #93261a;
+  --key-bg-3: #eae3dc;
+  --key-shadow-3: #b4a597;
+  --text-1: white;
+  --text-2: #44474f;
+  --text-3: white;
+  --text-4: white;
+}
+
+html {
+  background-color: var(--main-bg);
+  font-family: "Spartan", sans-serif;
+}
+
+.calculator {
+  min-height: 900px;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  height: 720px;
+  width: 540px;
+}

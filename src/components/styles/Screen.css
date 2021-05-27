@@ -1,0 +1,21 @@
+.screen {
+  background-color: var(--screen-bg);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 540px;
+  height: 130px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.screen::-webkit-scrollbar {
+  display: none;
+}
+.screen-text {
+  color: var(--text-1);
+  font-size: 48px;
+  float: right;
+  max-width: 480px;
+  padding: 0 40px;
+}
