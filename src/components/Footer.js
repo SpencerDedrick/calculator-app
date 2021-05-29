@@ -8,7 +8,7 @@ export default function Footer() {
         Developed by{" "}
         <a
           href="https://spencerdedrick.netlify.app"
-          rel="noreffer noopener"
+          rel="noreferrer"
           target="_blank"
         >
           Spencer Dedrick
