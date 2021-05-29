@@ -9,8 +9,10 @@ export default function Calculator() {
   let mathfromString = require("math-from-string");
 
   const [display, setDisplay] = useState("");
+  //Removed this calculation state because it's not totally necessary right now
   /* const [calculation, setCalculation] = useState(""); */
 
+  //Adds numbers or operators to the "display" or screen
   const addToDisplay = (input) => {
     if (display === "SYNTAX ERROR") {
       setDisplay(input);
@@ -20,6 +22,7 @@ export default function Calculator() {
     }
   };
 
+  //uses math-from-string to perform, return, and set the results of the equation on the screen
   const calculate = () => {
     try {
       setDisplay(mathfromString(display));
@@ -28,10 +31,12 @@ export default function Calculator() {
     }
   };
 
+  //when pressing the "reset" button the screen will reset to blank
   const resetDisplay = () => {
     setDisplay("");
   };
 
+  //deletes the last number or operator from the display
   const deleteFromDisplay = () => {
     if (display !== "SYNTAX ERROR") {
       try {
@@ -43,6 +48,7 @@ export default function Calculator() {
       resetDisplay();
     }
   };
+
   return (
     <div className="calculator">
       <div className="container">
