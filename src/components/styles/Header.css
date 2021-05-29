@@ -1,12 +1,15 @@
 .header {
   color: var(--text-1);
   display: flex;
+  width: 95vw;
+  max-width: 540px;
   max-height: 85px;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   padding: 10px;
   font-size: 32px;
+  margin: auto;
 }
 
 .header-text {

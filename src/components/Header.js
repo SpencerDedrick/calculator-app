@@ -4,9 +4,9 @@ import "./styles/Header.css";
 
 export default function Header() {
   return (
-    <div class="header flex">
-      <h1 class="header-text">calc</h1>
-      <div class="test">
+    <div className="header flex">
+      <h1 className="header-text">calc</h1>
+      <div className="test">
         <h1 id="theme">THEME</h1>
         <Switch></Switch>
       </div>

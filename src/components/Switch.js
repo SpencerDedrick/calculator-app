@@ -99,14 +99,14 @@ export default function Switch() {
   };
 
   return (
-    <div class="switch">
-      <div class="switch-labels">
-        <h1 class="label">1</h1>
-        <h1 class="label">2</h1>
-        <h1 class="label">3</h1>
+    <div className="switch">
+      <div className="switch-labels">
+        <h1 className="label">1</h1>
+        <h1 className="label">2</h1>
+        <h1 className="label">3</h1>
       </div>
-      <div class="switch-box" onClick={handleClick}>
-        <div class={`switch-handle ${positions[theme]}`}></div>
+      <div className="switch-box" onClick={handleClick}>
+        <div className={`switch-handle ${positions[theme]}`}></div>
       </div>
     </div>
   );

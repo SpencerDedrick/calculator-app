@@ -3,21 +3,26 @@ import "./styles/Calculator.css";
 import Screen from "./Screen";
 import Header from "./Header";
 import Keypad from "./Keypad";
+import Footer from "./Footer";
 
 export default function Calculator() {
   let mathfromString = require("math-from-string");
 
   const [display, setDisplay] = useState("");
-  const [calculation, setCalculation] = useState("");
+  /* const [calculation, setCalculation] = useState(""); */
 
   const addToDisplay = (input) => {
-    setDisplay(display + input);
-    setCalculation(display + input);
+    if (display === "SYNTAX ERROR") {
+      setDisplay(input);
+      /* setCalculation(input); */
+    } else {
+      setDisplay(display + "" + input);
+    }
   };
 
   const calculate = () => {
     try {
-      setDisplay(mathfromString(calculation));
+      setDisplay(mathfromString(display));
     } catch (err) {
       setDisplay("SYNTAX ERROR");
     }
@@ -25,19 +30,22 @@ export default function Calculator() {
 
   const resetDisplay = () => {
     setDisplay("");
-    setCalculation("");
   };
 
   const deleteFromDisplay = () => {
-    try {
-      setDisplay(display.slice(0, -1));
-    } catch (err) {
-      console.log(err);
+    if (display !== "SYNTAX ERROR") {
+      try {
+        setDisplay(display.slice(0, -1));
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      resetDisplay();
     }
   };
   return (
-    <div class="calculator">
-      <div class="container">
+    <div className="calculator">
+      <div className="container">
         <Header></Header>
         <Screen display={display}></Screen>
         <Keypad
@@ -46,6 +54,7 @@ export default function Calculator() {
           resetDisplay={resetDisplay}
           deleteFromDisplay={deleteFromDisplay}
         ></Keypad>
+        <Footer></Footer>
       </div>
     </div>
   );

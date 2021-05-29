@@ -1,10 +1,11 @@
 .key {
-  width: 100px;
   height: 64px;
   border-radius: 10px;
   display: grid;
   place-items: center;
   transition: box-shadow 200ms linear;
+  width: 80%;
+  max-width: 100px;
 }
 
 .key h1 {
@@ -40,7 +41,8 @@
 
 .key--large {
   grid-column: span 2;
-  width: 235px;
+  width: 90%;
+  max-width: 235px;
 }
 
 .key--text__small h1 {

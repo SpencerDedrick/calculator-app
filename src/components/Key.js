@@ -12,7 +12,7 @@ export default function Key(props) {
 
   return (
     <div
-      class={`key ${props.keyColor} ${props.keySize} ${props.keyText}`}
+      className={`key ${props.keyColor} ${props.keySize} ${props.keyText}`}
       onClick={() => {
         props.handleClick();
       }}

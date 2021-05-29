@@ -24,11 +24,12 @@ export default function Keypad(props) {
     "=",
   ];
   return (
-    <div class="keypad">
-      {VALUES.map((value) => {
+    <div className="keypad">
+      {VALUES.map((value, index) => {
         if (value === "DEL") {
           return (
             <Key
+              key={index}
               value={value}
               keyColor="key--blue"
               keySize="key--small"
@@ -41,6 +42,7 @@ export default function Keypad(props) {
         } else if (value === "RESET") {
           return (
             <Key
+              key={index}
               value={value}
               keyColor="key--blue"
               keySize="key--large"
@@ -53,6 +55,7 @@ export default function Keypad(props) {
         } else if (value === "=") {
           return (
             <Key
+              key={index}
               value={value}
               keyColor="key--red"
               keySize="key--large"
@@ -64,6 +67,7 @@ export default function Keypad(props) {
         } else {
           return (
             <Key
+              key={index}
               value={value}
               keyColor="key--white"
               handleClick={() => {
