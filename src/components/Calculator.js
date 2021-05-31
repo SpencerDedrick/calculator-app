@@ -4,10 +4,11 @@ import Screen from "./Screen";
 import Header from "./Header";
 import Keypad from "./Keypad";
 import Footer from "./Footer";
+import { evaluate } from "mathjs";
 
 export default function Calculator() {
   //I've built a javascript calculator with some other functionality from scratch. This time I opted to use a node module instead of hand coding the logic.
-  let mathfromString = require("math-from-string");
+  /*   let mathfromString = require("math-from-string"); */
 
   const [display, setDisplay] = useState("");
   //Removed this calculation state because it's not totally necessary right now
@@ -26,9 +27,11 @@ export default function Calculator() {
   //uses math-from-string to perform, return, and set the results of the equation on the screen
   const calculate = () => {
     try {
-      setDisplay(mathfromString(display));
+      setDisplay(evaluate(display));
+      console.log("hello");
     } catch (err) {
       setDisplay("SYNTAX ERROR");
+      console.log(err);
     }
   };
 
@@ -39,7 +42,7 @@ export default function Calculator() {
 
   //deletes the last number or operator from the display
   const deleteFromDisplay = () => {
-    if (display !== "SYNTAX ERROR") {
+    if (display !== "SYNTAX ERROR" && display === "") {
       try {
         setDisplay(display.slice(0, -1));
       } catch (err) {

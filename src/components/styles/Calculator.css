@@ -35,17 +35,3 @@ html {
   width: 100vw;
   max-width: 540px;
 }
-/*
-.calculator {
-  min-height: 900px;
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  place-items: center;
-}
-
-.container {
-  height: 720px;
-  width: 540px;
-}
- */
