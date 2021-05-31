@@ -17,7 +17,15 @@ export default function Key(props) {
         props.handleClick();
       }}
     >
-      <h1>{props.value}</h1>
+      <p className="key-num">{props.value}</p>
     </div>
+    /* <div
+      className={`key ${props.keyColor} ${props.keySize} ${props.keyText}`}
+      onClick={() => {
+        props.handleClick();
+      }}
+    >
+      <p>{props.value}</p>
+    </div> */
   );
 }

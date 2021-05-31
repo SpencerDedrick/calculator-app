@@ -78,7 +78,7 @@ export default function Switch() {
       themeProperties.forEach((property, index) => {
         root.style.setProperty(property, themeColors3[index]);
       });
-    } else if (theme === 3) {
+    } else if (theme === 2) {
       themeProperties.forEach((property, index) => {
         root.style.setProperty(property, themeColors1[index]);
       });
