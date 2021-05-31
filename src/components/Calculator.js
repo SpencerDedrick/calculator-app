@@ -6,6 +6,7 @@ import Keypad from "./Keypad";
 import Footer from "./Footer";
 
 export default function Calculator() {
+  //I've built a javascript calculator with some other functionality from scratch. This time I opted to use a node module instead of hand coding the logic.
   let mathfromString = require("math-from-string");
 
   const [display, setDisplay] = useState("");

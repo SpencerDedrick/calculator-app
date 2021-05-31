@@ -78,9 +78,28 @@ export default function Switch() {
       themeProperties.forEach((property, index) => {
         root.style.setProperty(property, themeColors3[index]);
       });
-    } else {
+    } else if (theme === 3) {
       themeProperties.forEach((property, index) => {
         root.style.setProperty(property, themeColors1[index]);
+      });
+    }
+  };
+
+  const selectTheme = (num) => {
+    if (num === 0) {
+      setTheme(0);
+      themeProperties.forEach((property, index) => {
+        root.style.setProperty(property, themeColors1[index]);
+      });
+    } else if (num === 1) {
+      setTheme(1);
+      themeProperties.forEach((property, index) => {
+        root.style.setProperty(property, themeColors2[index]);
+      });
+    } else if (num === 2) {
+      setTheme(2);
+      themeProperties.forEach((property, index) => {
+        root.style.setProperty(property, themeColors3[index]);
       });
     }
   };
@@ -101,9 +120,15 @@ export default function Switch() {
   return (
     <div className="switch">
       <div className="switch-labels">
-        <h1 className="label">1</h1>
-        <h1 className="label">2</h1>
-        <h1 className="label">3</h1>
+        <h1 className="label" onClick={() => selectTheme(0)}>
+          1
+        </h1>
+        <h1 className="label" onClick={() => selectTheme(1)}>
+          2
+        </h1>
+        <h1 className="label" onClick={() => selectTheme(2)}>
+          3
+        </h1>
       </div>
       <div className="switch-box" onClick={handleClick}>
         <div className={`switch-handle ${positions[theme]}`}></div>
