@@ -1,5 +1,5 @@
 .footer * {
-  color: white;
+  color: var(--text-1);
   bottom: 10px;
   font-size: 18px;
 }
