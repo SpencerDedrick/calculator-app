@@ -4,17 +4,21 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Frontend Mentor - Calculator app solution](#frontend-mentor---calculator-app-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Links](#links)
+  - [Install and run](#install-and-run)
+    - [Installing](#installing)
+    - [Running](#running)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
+  - [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -30,6 +34,15 @@ Users should be able to:
 ### Links
 
 - Live Site URL: [calculator-app](https://calculator-app-sd.netlify.app/)
+
+## Install and run
+### Installing
+- Clone the repository
+- `cd` into the cloned repository
+- Install dependencies by running `npm i` or `npm install`
+
+### Running
+- Inside of the project folder (where `package.json` is located) run `npm run start`
 
 ## My process
 
