@@ -16,15 +16,12 @@ export default function Calculator() {
 
   //Adds numbers or operators to the "display" or screen
   const addToDisplay = (input) => {
-    if (display === "SYNTAX ERROR") {
-      setDisplay(input);
-      /* setCalculation(input); */
-    } else {
-      setDisplay(display + "" + input);
-    }
+    display === "SYNTAX ERROR"
+      ? setDisplay(input) // if above is true
+      : setDisplay(display + "" + input); // if above is false
   };
 
-  //uses math-from-string to perform, return, and set the results of the equation on the screen
+  //uses mathjs to perform, return, and set the results of the equation on the screen
   const calculate = () => {
     try {
       setDisplay(evaluate(display));
@@ -56,15 +53,15 @@ export default function Calculator() {
   return (
     <div className="calculator">
       <div className="container">
-        <Header></Header>
-        <Screen display={display}></Screen>
+        <Header />
+        <Screen display={display} />
         <Keypad
           addToDisplay={addToDisplay}
           calculate={calculate}
           resetDisplay={resetDisplay}
           deleteFromDisplay={deleteFromDisplay}
-        ></Keypad>
-        <Footer></Footer>
+        />
+        <Footer />
       </div>
     </div>
   );

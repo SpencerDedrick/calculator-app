@@ -8,7 +8,7 @@ export default function Header() {
       <h1 className="header-text">calc</h1>
       <div className="test">
         <h1 id="theme">THEME</h1>
-        <Switch></Switch>
+        <Switch />
       </div>
     </div>
   );

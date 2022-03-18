@@ -26,55 +26,58 @@ export default function Keypad(props) {
   return (
     <div className="keypad">
       {VALUES.map((value, index) => {
-        if (value === "DEL") {
-          return (
-            <Key
-              key={index}
-              value={value}
-              keyColor="key--blue"
-              keySize="key--small"
-              keyText="key--text__small"
-              handleClick={() => {
-                props.deleteFromDisplay();
-              }}
-            ></Key>
-          );
-        } else if (value === "RESET") {
-          return (
-            <Key
-              key={index}
-              value={value}
-              keyColor="key--blue"
-              keySize="key--large"
-              keyText="key--text__small"
-              handleClick={() => {
-                props.resetDisplay();
-              }}
-            ></Key>
-          );
-        } else if (value === "=") {
-          return (
-            <Key
-              key={index}
-              value={value}
-              keyColor="key--red"
-              keySize="key--large"
-              handleClick={() => {
-                props.calculate();
-              }}
-            ></Key>
-          );
-        } else {
-          return (
-            <Key
-              key={index}
-              value={value}
-              keyColor="key--white"
-              handleClick={() => {
-                props.addToDisplay(value);
-              }}
-            ></Key>
-          );
+        switch (value) {
+          case "DEL":
+            return (
+              <Key
+                key={index}
+                value={value}
+                keyColor="key--blue"
+                keySize="key--small"
+                keyText="key--text__small"
+                handleClick={() => {
+                  props.deleteFromDisplay();
+                }}
+              />
+            );
+          case "RESET":
+            return (
+              <Key
+                key={index}
+                value={value}
+                keyColor="key--blue"
+                keySize="key--large"
+                keyText="key--text__small"
+                handleClick={() => {
+                  props.resetDisplay();
+                }}
+              />
+            );
+
+          case "=":
+            return (
+              <Key
+                key={index}
+                value={value}
+                keyColor="key--red"
+                keySize="key--large"
+                handleClick={() => {
+                  props.calculate();
+                }}
+              />
+            );
+
+          default:
+            return (
+              <Key
+                key={index}
+                value={value}
+                keyColor="key--white"
+                handleClick={() => {
+                  props.addToDisplay(value);
+                }}
+              />
+            );
         }
       })}
     </div>
