@@ -22,7 +22,7 @@ export default function Switch() {
   ];
   const themeColors1 = [
     "#3b4664",
-    " #252d44",
+    "#252d44",
     "#182034",
     "#637097",
     "#404e72",
@@ -30,10 +30,10 @@ export default function Switch() {
     "#93261a",
     "#eae3dc",
     "#b4a597",
-    "#fff",
+    "#ffffff",
     "#44474f",
-    "#fff",
-    "#fff",
+    "#ffffff",
+    "#ffffff",
   ];
 
   const themeColors2 = [
@@ -48,8 +48,8 @@ export default function Switch() {
     "#a69d91",
     "#44474f",
     "#44474f",
-    "#fff",
-    "#fff",
+    "#ffffff",
+    "#ffffff",
   ];
 
   const themeColors3 = [
@@ -65,7 +65,7 @@ export default function Switch() {
     "#891c9d",
     "#f9e32d",
     "#f9e32d",
-    "#fff",
+    "#ffffff",
     "#1e1d2d",
   ];
 
