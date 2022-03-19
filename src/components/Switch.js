@@ -22,7 +22,7 @@ export default function Switch() {
   ];
   const themeColors1 = [
     "#3b4664",
-    " #252d44",
+    "#252d44",
     "#182034",
     "#637097",
     "#404e72",
@@ -30,10 +30,10 @@ export default function Switch() {
     "#93261a",
     "#eae3dc",
     "#b4a597",
-    "#fff",
+    "#ffffff",
     "#44474f",
-    "#fff",
-    "#fff",
+    "#ffffff",
+    "#ffffff",
   ];
 
   const themeColors2 = [
@@ -48,8 +48,8 @@ export default function Switch() {
     "#a69d91",
     "#44474f",
     "#44474f",
-    "#fff",
-    "#fff",
+    "#ffffff",
+    "#ffffff",
   ];
 
   const themeColors3 = [
@@ -65,7 +65,7 @@ export default function Switch() {
     "#891c9d",
     "#f9e32d",
     "#f9e32d",
-    "#fff",
+    "#ffffff",
     "#1e1d2d",
   ];
 
@@ -85,25 +85,6 @@ export default function Switch() {
     }
   };
 
-  const selectTheme = (num) => {
-    if (num === 0) {
-      setTheme(0);
-      themeProperties.forEach((property, index) => {
-        root.style.setProperty(property, themeColors1[index]);
-      });
-    } else if (num === 1) {
-      setTheme(1);
-      themeProperties.forEach((property, index) => {
-        root.style.setProperty(property, themeColors2[index]);
-      });
-    } else if (num === 2) {
-      setTheme(2);
-      themeProperties.forEach((property, index) => {
-        root.style.setProperty(property, themeColors3[index]);
-      });
-    }
-  };
-
   const toggleSwitch = () => {
     if (theme === 2) {
       setTheme(0);
@@ -117,18 +98,39 @@ export default function Switch() {
     changeTheme();
   };
 
+  function SwitchLabel({ themeNumber }) {
+    const selectTheme = (num) => {
+      if (num === 0) {
+        setTheme(0);
+        themeProperties.forEach((property, index) => {
+          root.style.setProperty(property, themeColors1[index]);
+        });
+      } else if (num === 1) {
+        setTheme(1);
+        themeProperties.forEach((property, index) => {
+          root.style.setProperty(property, themeColors2[index]);
+        });
+      } else if (num === 2) {
+        setTheme(2);
+        themeProperties.forEach((property, index) => {
+          root.style.setProperty(property, themeColors3[index]);
+        });
+      }
+    };
+
+    return (
+      <h1 className="label" onClick={() => selectTheme(themeNumber)}>
+        {themeNumber + 1}
+      </h1>
+    );
+  }
+
   return (
     <div className="switch">
       <div className="switch-labels">
-        <h1 className="label" onClick={() => selectTheme(0)}>
-          1
-        </h1>
-        <h1 className="label" onClick={() => selectTheme(1)}>
-          2
-        </h1>
-        <h1 className="label" onClick={() => selectTheme(2)}>
-          3
-        </h1>
+        <SwitchLabel themeNumber={0} />
+        <SwitchLabel themeNumber={1} />
+        <SwitchLabel themeNumber={2} />
       </div>
       <div className="switch-box" onClick={handleClick}>
         <div className={`switch-handle ${positions[theme]}`}></div>
